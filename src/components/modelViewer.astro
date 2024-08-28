@@ -1,0 +1,24 @@
+---
+---
+<div class="w-full h-96 md:h-screen">
+  <!-- Incluye el script de <model-viewer> si estás usando CDN -->
+  <script
+    type="module"
+    src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"
+  ></script>
+  <!-- Usa <model-viewer> para mostrar el modelo 3D -->
+  <model-viewer
+    src="/src/assets/3D/m.glb"
+    ar
+    ar-modes="webxr scene-viewer quick-look"
+    camera-controls
+    tone-mapping="neutral"
+    shadow-intensity="0.79"
+    shadow-softness="1"
+    auto-rotate
+    class="w-full h-full fast-rotation"
+  >
+  </model-viewer>
+</div>
+
+

@@ -1,0 +1,40 @@
+---
+import { getCollection } from "astro:content"
+
+const write = await getCollection("writeups", ({ data }) => {
+   console.log(data)
+   return !data.isProgress
+})
+
+
+export async function getStaticPaths() {
+  const writeups = await getCollection("writeups");
+  return writeups.map((writeup) => ({
+    params: { writeup: writeup.data.link }, // Use 'writeup.data.link'
+  }));
+}
+
+
+const { writeup } = Astro.params
+const currentWriteup = await getCollection("writeups", (wr) => wr.data.link === writeup);
+
+
+console.log(writeup)
+---
+
+<section id="writeups">
+  <article class="prose prose-lg mx-auto p-4">
+    {
+      write.map((wr)=>{
+        <h1>{wr.data.title}</h1>
+        <h2>DJASKDJASKLDJASKLJDLKA</h2>
+    <p>{`Fecha: ${wr.data.date}`}</p>
+    <div>
+      {}
+      <!-- Mostrar el contenido del writeup -->
+    </div>
+      })
+    }
+    
+  </article>
+</section>

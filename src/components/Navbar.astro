@@ -1,0 +1,63 @@
+---
+import Button from "../components/ui/Button.astro"
+import ToggleTheme from "../components/ui/ToggleTheme.astro"
+import { Astronav, MenuIcon, MenuItems } from "astro-navbar"
+
+const menuitems = [
+  {
+    title: "Sobre Mi",
+    path: "#about",
+  },
+  {
+    title: "Proyectos",
+    path: "#projects",
+  },
+  {
+    title: "Resolución de Maquínas",
+    path: "#labs",
+  },
+  {
+    title: "Colaboraciones",
+    path: "#contact",
+  },
+  {
+    title: "Writeups",
+    path: "#",
+  },
+]
+---
+
+<header
+  data-testId="header"
+  class="fixed top-0 left-0 lg:w-full lg:h-16 z-50 lg:bg-slate-200 dark:bg-slate-900 lg:bg-opacity-40 backdrop-blur-md lg:rounded-xl flex flex-col items-center justify-center lg:flex-row"
+>
+  <Astronav>
+    <div class="flex w-full items-center lg:w-auto">
+      <div class="block lg:hidden justify-end">
+        <MenuIcon class="h-8 w-8 ml-3 mt-3 text-black dark:text-white" />
+      </div>
+    </div>
+    <MenuItems
+      class="mt-2 hidden w-full lg:mt-0 lg:flex lg:w-auto text-black dark:text-white"
+    >
+      <ul class="flex m-5 flex-col lg:flex-row lg:gap-3 ">
+        {
+          menuitems.map((item) => (
+            <>
+              <li>
+                <a
+                  aria-label="navigation link"
+                  href={item.path}
+                  class="flex py-2 text-black hover:text-cyan-500 dark:text-white dark:hover:text-cyan-500 lg:px-3"
+                >
+                  {item.title}
+                </a>
+              </li>
+            </>
+          ))
+        }
+        <li><ToggleTheme /></li>
+      </ul>
+    </MenuItems>
+  </Astronav>
+</header>

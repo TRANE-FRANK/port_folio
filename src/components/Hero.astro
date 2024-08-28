@@ -1,0 +1,26 @@
+---
+import Button from "./ui/Button.astro"
+import ModelViewer from "./modelViewer.astro"
+---
+
+<section
+  class="flex flex-col-reverse md:flex-row items-center justify-between p-8 md:p-16 text-black dark:text-white"
+>
+  <div
+    class="flex flex-col items-center md:items-start space-y-6 text-center md:text-left w-full md:w-1/2"
+  >
+    <h1 class="text-4xl md:text-6xl font-bold">
+      Hola, soy <span class="text-cyan-500">Francisco Cruz Sanchez</span>
+    </h1>
+    <p class="text-xl md:text-2xl">
+      Desarrollador web apasionado por crear experiencias digitales asombrosas.
+    </p>
+    <Button text="Ver Mis Proyectos" href="#projects" variant="primary" />
+    <Button class="justify-start" text="Descargar CV" variant="secondary" />
+  </div>
+
+  <!-- Right Image -->
+  <div class="w-full md:w-1/2 flex justify-center">
+    <ModelViewer />
+  </div>
+</section>

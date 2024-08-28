@@ -1,0 +1,58 @@
+---
+import Tags from "../ui/Tags.astro"
+import { Image } from "astro:assets"
+import { resolverImage } from "../../utils/imageResolver"
+
+interface Props {
+  url?: string
+  alt?: string
+  title?: string
+  description: string
+  tags: string[]
+  img: string
+}
+
+const {
+  url = "#",
+  alt = "Project image",
+  description = "Project Description",
+  title = "Project title",
+  tags = ["Tags"],
+  img,
+} = Astro.props
+
+const imageSrc = resolverImage(img)
+---
+
+<section class="w-full p-4 md:w-full lg:w-full">
+  <article
+    data-testId="card"
+    class="rounded-xl bg-white p-3 shadow-lg hover:animate-pop"
+  >
+    <a href={url} aria-label="link to project">
+      <div class="relative flex items-center justify-center m-3 overflow-hidden rounded-lg">
+        {
+          imageSrc ? (
+            <Image 
+              src={imageSrc}
+              alt={alt}
+              format="png"
+              width={400}
+              height={400}
+              loading="lazy"
+            />
+          ) : (
+            <div class="w-full h-40 bg-gray-200 flex items-center justify-center">
+              <span>Imagen no disponible</span>
+            </div>
+          )
+        }
+      </div>
+      <div class="mt-1 p-2">
+        <h3 class="text-xl text-orange lg:text-2xl">{title}</h3>
+        <p class="text-s text-black">{description}</p>
+        <Tags tags={tags} />
+      </div>
+    </a>
+  </article>
+</section>

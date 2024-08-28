@@ -1,0 +1,22 @@
+---
+// Este es un componente de botón reutilizable
+export interface ButtonProps {
+  text: string;
+  href: string;
+  variant?: 'primary' | 'secondary';
+}
+
+const { text, href, variant = 'primary' } = Astro.props as ButtonProps;
+
+const baseStyles = "px-6 py-3 rounded-lg text-lg font-semibold shadow-lg transition duration-300";
+const variants = {
+  primary: "bg-cyan-500 text-gray-800 hover:bg-cyan-700",
+  secondary: "bg-gray-800 text-white hover:bg-gray-900",
+};
+
+const buttonStyles = `${baseStyles} ${variants[variant]}`;
+---
+
+<a href={href} class={buttonStyles}>
+  {text}
+</a>
