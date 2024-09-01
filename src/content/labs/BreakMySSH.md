@@ -3,6 +3,6 @@ inProgress: false
 name: BreakMySSH
 platform: DockerLabs
 vulnerabilities: ['SSH', 'Open Port 22']
-link: BreakMySSH
+link: writeups/BreakMySSH
 difficulty: Muy Facíl
 ---

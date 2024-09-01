@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/Layout.astro
 name: "Máquina DockerLabs"
-url: "writeups/DockerLabs"
+url: "writeups/BreakMySSH"
 difficulty: "Facil"
 platform: "DockerLabs"
 vulnerabilities: ["Vulnerabilidad 1", "Vulnerabilidad 2"]
@@ -10,7 +10,7 @@ title: "DockerLabs"
 date: "01-09-2024"
 ---
 
-# Descripción
+## Descripción
 
 En este writeup se describe el proceso para explotar una vulnerabilidad en la máquina XYZ del entorno de pruebas. Se incluyen detalles sobre la configuración, las herramientas utilizadas y los pasos seguidos para lograr el objetivo.
 

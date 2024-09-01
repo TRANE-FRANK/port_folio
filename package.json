@@ -21,6 +21,7 @@
     "three": "^0.167.1"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.15",
     "@types/react": "^18.3.4",
     "@types/three": "^0.167.2",
     "typescript": "^5.5.4"

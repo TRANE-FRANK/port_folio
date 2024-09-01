@@ -5,12 +5,12 @@ interface Props {
   name?: string
   platform?: string
   vulnerabilities: string[]
-  link: string
+  url: string
   difficulty: string
 }
 
 const {
-  link = "#",
+  url = "",
   name = "Nombre de Máquina",
   platform = "Plataforma de laboratorios",
   difficulty = "Dificultad",
@@ -24,7 +24,7 @@ const {
     class="rounded-xl bg-white dark:bg-gray-800 p-4 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out"
   >
     <a
-      href={`/writeups/${link}`}
+      href={url}
       aria-label="link to writeup"
       class="block"
     >
