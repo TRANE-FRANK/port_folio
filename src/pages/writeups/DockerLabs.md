@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/Layout.astro
+layout: ../../layouts/MarkdownWriteupLayout.astro
 name: "Máquina DockerLabs"
 url: "writeups/BreakMySSH"
 difficulty: "Facil"

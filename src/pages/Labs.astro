@@ -1,11 +1,5 @@
 ---
-import { getCollection } from "astro:content";
 import CardLab from "../components/ui/CardLab.astro";
-
-/*const labs = await getCollection("labs", ({ data }) => {
-  //console.log(data)
-  return !data.inProgress
-})*/
 
 const labs = await Astro.glob('../pages/writeups/*.md')
 
