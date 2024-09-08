@@ -1,18 +1,20 @@
 ---
+import BackButton from "../components/BackButton.astro"
 import Layout from "./Layout.astro"
 const { frontmatter } = Astro.props
 ---
 
-<Layout title={frontmatter.name}>
+<Layout title={frontmatter.name} description=`Contenido de Writeup de máquina ${frontmatter.name}`>
   <section class="w-full pt-16 flex justify-center items-center">
     <article
-      class="prose lg:prose-xl bg-slate-200 dark:bg-slate-900 text-black dark:text-white p-6 rounded-md shadow-md"
+      class="prose lg:prose-xl text-black dark:text-white p-6 rounded-md shadow-md"
     >
       <h1 class="text-4xl font-bold text-center m-6 text-black dark:text-white">
         {frontmatter.title}
       </h1>
       <div class="text-black dark:text-white">
         <slot />
+        <BackButton />
       </div>
     </article>
   </section>

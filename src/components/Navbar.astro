@@ -1,0 +1,62 @@
+---
+import ToggleTheme from "./ui/ToggleTheme.astro"
+import { Astronav, MenuIcon, MenuItems } from "astro-navbar"
+
+const menuitems = [
+  {
+    title: "Sobre Mi",
+    path: "/#about",
+  },
+  {
+    title: "Proyectos",
+    path: "/#projects",
+  },
+  {
+    title: "Resolución de Maquínas",
+    path: "/#labs",
+  },
+  {
+    title: "Colaboraciones",
+    path: "/#contact",
+  },
+  {
+    title: "Contáctame",
+    path: "/#contacts",
+  },
+]
+---
+
+<header
+  data-testId="header"
+  class="fixed top-0 left-0 w-full lg:h-16 z-50 bg-opacity-20 backdrop-blur-md rounded-xl flex flex-col lg:items-center md:items-start justify-center lg:flex-row px-4"
+>
+  <Astronav>
+    <!-- Botón del menú para móviles -->
+    <div class="flex w-full items-start justify-start lg:w-auto">
+      <div class="block lg:hidden">
+        <MenuIcon class="h-8 w-8 text-black dark:text-slate-400 mt-3" />
+      </div>
+    </div>
+
+    <!-- Lista de ítems del menú -->
+    <MenuItems
+      class="mt-5 hidden lg:flex lg:mt-0 lg:w-auto text-black dark:text-slate-500 "
+    >
+      <ul class="flex flex-col lg:flex-row lg:gap-6">
+        {
+          menuitems.map((item) => (
+            <li>
+              <a
+                href={item.path}
+                class="relative py-2 lg:px-3 text-black dark:text-white  no-underline hover:text-cyan-500 dark:hover:text-cyan-500 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-cyan-500 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
+              >
+                {item.title}
+              </a>
+            </li>
+          ))
+        }
+        <li class="mt-5 lg:mt-0"><ToggleTheme /></li>
+      </ul>
+    </MenuItems>
+  </Astronav>
+</header>

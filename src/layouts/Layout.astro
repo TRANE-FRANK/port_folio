@@ -1,33 +1,105 @@
 ---
-import Navbar from "../pages/Navbar.astro"
+import { ViewTransitions } from "astro:transitions"
+import Navbar from "../components/Navbar.astro"
 interface Props {
   title: string
+  description: string
 }
 
-const { title } = Astro.props
+const { title, description } = Astro.props
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <ViewTransitions />
   </head>
-  <body class="bg-slate-200 dark:bg-slate-900">
+  <body class="bg-gradient-to-r from-slate-300 to-teal-100 dark:from-slate-900 dark:to-slate-700">
     <Navbar />
     <slot />
   </body>
 </html>
 <style is:global>
-  :root {
+  import "@fontsource/poppins" :root {
     color-scheme: light dark;
   }
   html {
-    font-family: system-ui, sans-serif;
+    font-family: "Poppins", sans-serif;
     @apply scroll-smooth;
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const checkbox = document.querySelector("#checkbox") as HTMLInputElement
+
+    // Función para aplicar el tema
+    const applyTheme = (theme: "dark" | "light") => {
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark")
+      } else {
+        document.documentElement.classList.remove("dark")
+      }
+    }
+
+    // Función para inicializar el tema
+    const initTheme = () => {
+      const userTheme = localStorage.getItem("theme")
+      const systemTheme = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches
+
+      if (userTheme) {
+        applyTheme(userTheme as "dark" | "light")
+        if (checkbox) checkbox.checked = userTheme === "dark"
+      } else {
+        applyTheme(systemTheme ? "dark" : "light")
+        if (checkbox) checkbox.checked = systemTheme
+      }
+    }
+
+    // Función para cambiar el tema
+    const switchTheme = () => {
+      const currentTheme = document.documentElement.classList.contains("dark")
+        ? "dark"
+        : "light"
+      const newTheme = currentTheme === "dark" ? "light" : "dark"
+      applyTheme(newTheme)
+      localStorage.setItem("theme", newTheme)
+    }
+
+    // Inicializar el tema cuando la página carga
+    initTheme()
+
+    // Listener para el checkbox de cambio de tema
+    if (checkbox) {
+      checkbox.addEventListener("click", switchTheme)
+    }
+
+    // Escuchar cambios en la preferencia del sistema
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", (e) => {
+        if (!localStorage.getItem("theme")) {
+          applyTheme(e.matches ? "dark" : "light")
+          if (checkbox) checkbox.checked = e.matches
+        }
+      })
+
+    // Reaplicar el tema cada vez que cambies de página en navegaciones internas
+    document.addEventListener("astro:after-swap", () => {
+      initTheme()
+      const checkbox = document.querySelector("#checkbox") as HTMLInputElement
+      if (checkbox) {
+        checkbox.removeEventListener("click", switchTheme)
+        checkbox.addEventListener("click", switchTheme)
+      }
+    })
+  })
+</script>

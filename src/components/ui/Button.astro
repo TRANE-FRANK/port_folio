@@ -8,7 +8,7 @@ export interface ButtonProps {
 
 const { text, href, variant = 'primary' } = Astro.props as ButtonProps;
 
-const baseStyles = "px-6 py-3 rounded-lg text-lg font-semibold shadow-lg transition duration-300";
+const baseStyles = "px-6 py-3 rounded-lg text-lg font-semibold shadow-lg hover:animate-tilt";
 const variants = {
   primary: "bg-cyan-500 text-gray-800 hover:bg-cyan-700",
   secondary: "bg-gray-800 text-white hover:bg-gray-900",
