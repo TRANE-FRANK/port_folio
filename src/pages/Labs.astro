@@ -1,10 +1,14 @@
 ---
-import CardLab from "../components/ui/CardLab.astro";
+import CardLab from "../components/ui/CardLab.astro"
 
-const labs = await Astro.glob('../pages/writeups/*.md')
-
+const labs = await Astro.glob("../pages/writeups/*.md")
 ---
-<section id="labs" class="flex flex-col items-center p-8 md:p-16 text-black dark:text-white">
+
+<section
+  transition:animate="fade"
+  id="labs"
+  class="flex flex-col items-center p-8 md:p-16 text-black dark:text-white"
+>
   <h2 class="text-3xl md:text-5xl font-bold mb-8 text-center">
     Máquinas resueltas
   </h2>
@@ -15,12 +19,13 @@ const labs = await Astro.glob('../pages/writeups/*.md')
           <CardLab
             url={lab.url ?? ""}
             name={lab.frontmatter.name ?? "Nombre no disponible"}
-            difficulty={lab.frontmatter.difficulty ?? "Dificultad no disponible"}
+            difficulty={
+              lab.frontmatter.difficulty ?? "Dificultad no disponible"
+            }
             platform={lab.frontmatter.platform ?? "Plataforma no disponible"}
             vulnerabilities={lab.frontmatter.vulnerabilities ?? []}
           />
-        );
+        )
       })
     }
-  </div>
 </section>

@@ -28,7 +28,7 @@ const menuitems = [
 
 <header
   data-testId="header"
-  class="fixed top-0 left-0 w-full lg:h-16 z-50 bg-opacity-20 backdrop-blur-md rounded-xl flex flex-col lg:items-center md:items-start justify-center lg:flex-row px-4"
+  class="fixed top-0 left-0 w-full lg:h-16 z-50 bg-opacity-20 backdrop-blur-md flex flex-col lg:items-center md:items-start justify-center lg:flex-row px-4"
 >
   <Astronav>
     <!-- Botón del menú para móviles -->
@@ -40,7 +40,7 @@ const menuitems = [
 
     <!-- Lista de ítems del menú -->
     <MenuItems
-      class="mt-5 hidden lg:flex lg:mt-0 lg:w-auto text-black dark:text-slate-500 "
+      class="mt-5 hidden lg:flex lg:mt-0 lg:w-auto"
     >
       <ul class="flex flex-col lg:flex-row lg:gap-6">
         {
@@ -48,7 +48,7 @@ const menuitems = [
             <li>
               <a
                 href={item.path}
-                class="relative py-2 lg:px-3 text-black dark:text-white  no-underline hover:text-cyan-500 dark:hover:text-cyan-500 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-cyan-500 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
+                class="relative py-2 lg:px-3 font-bold text-black dark:text-white  no-underline hover:text-cyan-500 dark:hover:text-cyan-500 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-cyan-500 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
               >
                 {item.title}
               </a>

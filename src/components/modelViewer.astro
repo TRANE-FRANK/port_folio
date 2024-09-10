@@ -7,11 +7,11 @@
   <script
     type="module"
     src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"
+    defer
   ></script>
   <model-viewer
-    src="/dog.glb"
+    src="/mipc.glb"
     ar
-    ar-modes="webxr scene-viewer quick-look"
     tone-mapping="neutral"
     shadow-intensity="0.79"
     shadow-softness="1.5"
@@ -21,6 +21,7 @@
     rotation-per-second="10deg"
     autoplay
     class="w-full h-full fast-rotation"
+    loading="lazy"
   >
   </model-viewer>
 </div>

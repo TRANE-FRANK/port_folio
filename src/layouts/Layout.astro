@@ -18,7 +18,7 @@ const { title, description } = Astro.props
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <ViewTransitions />
+    <ViewTransitions transition:animate="fade" />
   </head>
   <body class="bg-gradient-to-r from-slate-300 to-teal-100 dark:from-slate-900 dark:to-slate-700">
     <Navbar />
@@ -39,7 +39,6 @@ const { title, description } = Astro.props
   document.addEventListener("DOMContentLoaded", function () {
     const checkbox = document.querySelector("#checkbox") as HTMLInputElement
 
-    // Función para aplicar el tema
     const applyTheme = (theme: "dark" | "light") => {
       if (theme === "dark") {
         document.documentElement.classList.add("dark")
@@ -48,7 +47,6 @@ const { title, description } = Astro.props
       }
     }
 
-    // Función para inicializar el tema
     const initTheme = () => {
       const userTheme = localStorage.getItem("theme")
       const systemTheme = window.matchMedia(
@@ -64,7 +62,6 @@ const { title, description } = Astro.props
       }
     }
 
-    // Función para cambiar el tema
     const switchTheme = () => {
       const currentTheme = document.documentElement.classList.contains("dark")
         ? "dark"
@@ -74,15 +71,12 @@ const { title, description } = Astro.props
       localStorage.setItem("theme", newTheme)
     }
 
-    // Inicializar el tema cuando la página carga
     initTheme()
 
-    // Listener para el checkbox de cambio de tema
     if (checkbox) {
       checkbox.addEventListener("click", switchTheme)
     }
 
-    // Escuchar cambios en la preferencia del sistema
     window
       .matchMedia("(prefers-color-scheme: dark)")
       .addEventListener("change", (e) => {
@@ -92,7 +86,6 @@ const { title, description } = Astro.props
         }
       })
 
-    // Reaplicar el tema cada vez que cambies de página en navegaciones internas
     document.addEventListener("astro:after-swap", () => {
       initTheme()
       const checkbox = document.querySelector("#checkbox") as HTMLInputElement

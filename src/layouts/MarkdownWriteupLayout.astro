@@ -4,14 +4,36 @@ import Layout from "./Layout.astro"
 const { frontmatter } = Astro.props
 ---
 
-<Layout title={frontmatter.name} description=`Contenido de Writeup de máquina ${frontmatter.name}`>
+<Layout
+  title={frontmatter.name}
+  description=`Contenido de Writeup de máquina ${frontmatter.name}`
+>
   <section class="w-full pt-16 flex justify-center items-center">
     <article
-      class="prose lg:prose-xl text-black dark:text-white p-6 rounded-md shadow-md"
+      class="prose lg:prose-xl text-black dark:text-white p-6"
     >
-      <h1 class="text-4xl font-bold text-center m-6 text-black dark:text-white">
+      <h1
+        class="text-4xl md:text-5xl font-bold text-center m-6 text-black dark:text-white"
+      >
         {frontmatter.title}
       </h1>
+
+      <div class="justify-between items-center grid grid-cols-2 space-x-20">
+        <h2
+          class="text-3xl md:text-4xl font-bold from-neutral-950 text-black dark:text-white m-6"
+        >
+          Dificultad: {frontmatter.difficulty}
+        </h2>
+        <img class="w-1/2" src={frontmatter.logo} alt="Logo de plataforma" />
+      </div>
+      <h3 class="text-black dark:text-white m-6">
+        Plataforma: {frontmatter.platform}
+      </h3>
+      <a
+        class="text-2xl md:text-3xl text-black dark:text-white m-6"
+        href={frontmatter.oficial}>Página Oficial</a
+      >
+
       <div class="text-black dark:text-white">
         <slot />
         <BackButton />
