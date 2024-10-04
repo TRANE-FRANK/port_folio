@@ -1,9 +1,10 @@
 ---
 inProgress: false
-title: Aplicación para Universidad.
-description: Aplicación web educatica para la gestion para una universidad.
-img_alt: Aplicación web con Angular
-img: 1.png
-link: https://github.com
-tags: ['Angular', 'Firebase', 'Tailwind CSS', 'Typescript']
+title: Aplicación Administrativa
+description: Aplicación web para la gestión eficiente de información empresarial.
+img_alt: Interfaz de la aplicación web desarrollada con PHP Nativo
+img: nominas.png
+link: https://fleteracvv.com/admin/
+tags: ["PHP Nativo", "Bulma CSS", "MySQL", "jQuery", "SweetAlert2", "API de Ruteo INEGI"]
+
 ---

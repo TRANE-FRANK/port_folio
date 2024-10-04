@@ -1,9 +1,9 @@
 ---
 inProgress: false
-title: Aplicacion Administradora.
-description: Cumpliendo con la función para poder gestionar la administración de la empresa.
-img_alt: Aplicación web con PHP
-link: https://github.com/
-tags: ['PHP Nativo', 'Bulma CSS', 'PHP']
-img: 2.png
+title: Calculadora de Calorías.
+description: Aplicación web para calcular las calorias consumudidas y quemadas.
+img_alt: interfaz de aplicación web desarrollada con Vite + React 
+link: https://projects-fr4n-cal-calorias.netlify.app/
+tags: ["React", "Tailwind CSS", "TypeScript", "localStorage", "useReducer"]
+img: cal-calorias.png
 ---

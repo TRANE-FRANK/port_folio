@@ -9,13 +9,23 @@ import NextIcon from "../components/icons/NextIcon.astro"
 import FlutterIcon from "../components/icons/FlutterIcon.astro"
 import TursoIcon from "../components/icons/TursoIcon.astro"
 import PythonIcon from "../components/icons/PythonIcon.astro"
+import FirebaseIcon from "../components/icons/FirebaseIcon.astro"
+import MySQLIcon from "../components/icons/MySQLIcon.astro"
+import BlenderIcon from "../components/icons/BlenderIcon.astro"
+import DartIcon from "../components/icons/DartIcon.astro"
+import NetlifyIcon from "../components/icons/NetlifyIcon.astro"
+import FLStudioIcon from "../components/icons/FLStudioIcon.astro"
 ---
 
 <section id="about" class="p-8 mt-12 text-black dark:text-white">
   <div class="max-w-6xl mx-auto">
-    <div class="mb-10">
-      <h1 class="text-4xl md:text-5xl font-bold text-center mb-10">Sobre mí</h1>
-      <p class="text-lg md:text-xl leading-relaxed">
+    <div class="mb-12">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8">
+        Sobre mí
+      </h1>
+      <p
+        class="text-base sm:text-lg md:text-xl leading-relaxed mx-auto max-w-3xl"
+      >
         Soy Ingeniero en Sistemas Computacionales con una sólida base en redes,
         robótica y programación. Mi verdadera pasión radica en el desarrollo
         web, donde disfruto creando experiencias visuales atractivas y
@@ -25,78 +35,128 @@ import PythonIcon from "../components/icons/PythonIcon.astro"
         campo.
       </p>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div
-        class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg justify-center"
-      >
-        <h3 class="text-xl font-semibold mb-4">Mis habilidades</h3>
-        <ul class="space-y-5 grid grid-cols-2 items-center justify-center">
+
+    <!-- Sección de habilidades y otros intereses -->
+    <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Habilidades -->
+      <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-semibold mb-6 text-center">Mis habilidades</h3>
+        <ul
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 items-center justify-center"
+        >
           <li
-            class="flex items-center space-x-3 bg-purple-300 bg-opacity-40 p-3 m-2 rounded-md"
+            class="flex flex-col items-center space-y-2 p-4 bg-purple-500 bg-opacity-20 rounded-md hover:scale-110 hover:bg-opacity-60 transition-transform"
           >
-            <PHPIcon class="size-4" />
+            <PHPIcon />
           </li>
 
           <li
-            class="flex items-center space-x-3 bg-emerald-400 bg-opacity-40  p-3 m-2 rounded-md"
+            class="flex flex-col items-center space-y-2 p-4 bg-emerald-500 bg-opacity-20 rounded-md hover:scale-110 hover:bg-opacity-60 transition-transform"
           >
-            <TursoIcon class="size-4" />
+            <TursoIcon />
           </li>
 
           <li
-            class="flex items-center space-x-3 bg-green-300 bg-opacity-40 backdrop-blur-lg p-3 m-2 rounded-md"
+            class="flex flex-col items-center space-y-2 p-4 bg-emerald-700 bg-opacity-20 rounded-md hover:scale-110 hover:bg-opacity-60 transition-transform"
           >
-            <TailwindIcon class="size-4" />
+            <TailwindIcon />
           </li>
 
           <li
-            class="flex items-center space-x-3 bg-blue-300 bg-opacity-40 backdrop-blur-lg p-3 m-2 rounded-md"
+            class="flex flex-col items-center space-y-2 p-4 bg-blue-600 bg-opacity-20 rounded-md hover:scale-110 hover:bg-opacity-60 transition-transform"
           >
-            <TypeScriptIcon class="size-4" />
+            <TypeScriptIcon />
           </li>
 
           <li
-            class="flex items-center space-x-3 bg-yellow-300 bg-opacity-40 backdrop-blur-lg p-3 m-2 rounded-md"
+            class="flex flex-col items-center space-y-2 p-4 bg-yellow-500 bg-opacity-20 rounded-md hover:scale-110 hover:bg-opacity-60 transition-transform"
           >
-            <JavaScriptIcon class="size-4" />
+            <JavaScriptIcon />
           </li>
 
           <li
-            class="flex items-center space-x-3 bg-gray-700 bg-opacity-40 backdrop-blur-lg p-3 m-2 rounded-md"
+            class="flex flex-col items-center space-y-2 p-4 bg-slate-400 bg-opacity-20 rounded-md hover:scale-110 hover:bg-opacity-60 transition-transform"
           >
-            <AstroIcon class="size-4" />
+            <AstroIcon />
           </li>
 
           <li
-            class="flex items-center space-x-3 bg-pink-500 bg-opacity-40 backdrop-blur-lg p-3 m-2 rounded-md"
+            class="flex flex-col items-center space-y-2 p-4 bg-pink-500 bg-opacity-20 rounded-md hover:scale-110 hover:bg-opacity-60 transition-transform"
           >
-            <AngularIcons class="size-4" />
+            <AngularIcons />
           </li>
 
           <li
-            class="flex items-center space-x-3 bg-gray-800 bg-opacity-40 backdrop-blur-lg p-3 m-2 rounded-md"
+            class="flex flex-col items-center space-y-2 p-4 bg-gray-900 bg-opacity-20 rounded-md hover:scale-110 hover:bg-opacity-60 transition-transform"
           >
             <NextIcon />
           </li>
 
           <li
-            class="flex items-center space-x-3 bg-emerald-300 bg-opacity-40 backdrop-blur-lg p-3 m-2 rounded-md"
+            class="flex flex-col items-center space-y-2 p-4 bg-emerald-600 bg-opacity-20 rounded-md hover:scale-110 hover:bg-opacity-60 transition-transform"
           >
             <FlutterIcon />
           </li>
 
-          <li class="flex items-center space-x-3 p-2 m-2 rounded-md">
+          <li
+            class="flex flex-col items-center space-y-2 p-4 bg-yellow-400 bg-opacity-20 rounded-md hover:scale-110 hover:bg-opacity-60 transition-transform"
+          >
             <PythonIcon />
+          </li>
+
+          <li
+            class="flex flex-col items-center space-y-2 p-4 bg-orange-800 bg-opacity-20 rounded-md hover:scale-110 hover:bg-opacity-60 transition-transform"
+          >
+            <FirebaseIcon />
+          </li>
+
+          <li
+            class="flex flex-col items-center space-y-2 p-4 bg-blue-800 bg-opacity-20 rounded-md hover:scale-110 hover:bg-opacity-60 transition-transform"
+          >
+            <MySQLIcon />
+          </li>
+
+          <li
+            class="flex flex-col items-center space-y-2 p-4 bg-yellow-800 bg-opacity-20 rounded-md hover:scale-110 hover:bg-opacity-60 transition-transform"
+          >
+            <BlenderIcon />
+          </li>
+          <li
+            class="flex flex-col items-center space-y-2 p-4 bg-cyan-500 bg-opacity-20 rounded-md hover:scale-110 hover:bg-opacity-60 transition-transform"
+          >
+            <DartIcon />
+          </li>
+          <li
+            class="flex flex-col items-center space-y-2 p-4 bg-emerald-500 bg-opacity-20 rounded-md hover:scale-110 hover:bg-opacity-60 transition-transform"
+          >
+            <NetlifyIcon />
+          </li>
+          <li
+            class="flex flex-col items-center space-y-2 p-4 bg-yellow-500 bg-opacity-20 rounded-md hover:scale-110 hover:bg-opacity-60 transition-transform"
+          >
+            <FLStudioIcon />
           </li>
         </ul>
       </div>
+
+      <!-- Otros intereses -->
       <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
-        <h3 class="text-xl font-semibold mb-4">Otros intereses</h3>
-        <p class="text-lg">
+        <h3 class="text-xl font-semibold mb-4 text-center">Otros intereses</h3>
+        <p class="text-lg leading-relaxed">
           Además de mi enfoque en el desarrollo web, también estoy interesado en
           áreas como el análisis de datos y la inteligencia artificial. Estoy
           siempre en busca de nuevas oportunidades para aprender y crecer
           profesionalmente.
+        </p>
+
+        <h3 class="text-xl font-semibold mt-10 text-center">Hobbies</h3>
+        <p class="text-lg leading-relaxed">
+          En mis tiempos libres, disfruto sumergiéndome en el fascinante mundo
+          de la producción musical. Me apasiona explorar nuevos sonidos,
+          experimentar con sintetizadores y efectos, y descubrir técnicas de
+          producción innovadoras que me permiten dar vida a mis ideas creativas.
+          Para mí, la música es una forma de expresión sin límites, donde cada
+          pista es una oportunidad para crear algo único y emocionante.
         </p>
       </div>
     </div>
